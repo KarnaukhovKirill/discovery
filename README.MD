@@ -55,6 +55,14 @@ curl --request POST --header 'Content-Type: application/json' localhost:8082/mes
 curl --request GET localhost:8081/messages
 ````
 ![alt text](https://github.com/KarnaukhovKirill/discovery/blob/main/img/messages.png)
+#### Как остановить сервисы
+Сервисы запускаются без графического интерфейса и будут работать в фоне, пока не выключиться компьютер, либо можно 
+принудително завершить их работу, выполнив команды
+````
+curl --request POST localhost:8080/actuator/shutdown
+curl -X POST localhost:8081/shutdown
+curl -X POST localhost:8082/shutdown
+````
 # TODO
 - [ ] tests
 - [ ] load balancer
